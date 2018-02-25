@@ -26,9 +26,28 @@ public class StringEx {
         String cosiek1 = "";
         String cosiek2 = " asdsadsadsadad";
 
-        cosiek.isEmpty();
+        String hello = "Witaj, " + " swiecie " + ", co tam u " + " Ciebie?";
+        String hello1 = new StringBuilder().append("Witaj, ").append(" swiecie ").append(", co tam u ").append(" Ciebie?").toString();
 
 
-        System.out.println(text);
+
+        long startTime1 = System.currentTimeMillis();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 100000; i++) {
+            stringBuilder.append("Linia: ").append(i);
+        }
+        long stopTime1 = System.currentTimeMillis();
+
+
+        System.out.println("Sposob ze StringiemBuilderem: " + (stopTime1 - startTime1));
+
+
+        long startTime = System.currentTimeMillis();
+        String bookText = "";
+        for (int i = 0; i < 100000; i++) {
+            bookText +=  "Linia: " + i;
+        }
+        long stopTime = System.currentTimeMillis();
+        System.out.println("Sposob ze Stringiem: " + (stopTime - startTime));
     }
 }
